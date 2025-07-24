@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Aston Martin Racing Palette */
+  --color-racing-green: #003824;
+  --color-forest-green: #004225;
+  --color-emerald-green: #00543C;
+  --color-lime-green: #32CD32;
+  --color-neon-green: #39FF14;
+  --color-orange-primary: #FF6600;
+  --color-orange-light: #FF7A1A;
+  --color-orange-dark: #E55B00;
+  --color-orange-neon: #FF4500;
+  --color-black: #000000;
+  --color-carbon-black: #0D0D0D;
+  --color-dark-gray: #1A1A1A;
+  --color-medium-gray: #2A2A2A;
+  --color-light-gray: #CCCCCC;
+  --color-white: #FFFFFF;
+  --color-silver: #C0C0C0;
+
+  /* Typography */
+  --font-primary: 'Playfair Display', 'Georgia', serif;
+  --font-secondary: 'Inter', 'Segoe UI', sans-serif;
+  --font-racing: 'Orbitron', 'Futura', sans-serif;
+  --font-accent: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  /* Shadows and Effects */
+  --shadow-glow-orange: 0 0 20px rgba(255, 102, 0, 0.5);
+  --shadow-glow-green: 0 0 20px rgba(0, 84, 60, 0.5);
+  --shadow-intense: 0 0 40px rgba(255, 102, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-secondary);
+  line-height: 1.7;
+  color: var(--color-white);
+  background: var(--color-carbon-black);
+  overflow-x: hidden;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Keyframe Animations for Epic Effects */
+@keyframes speed-line {
+  0% { left: -100%; opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes title-glow {
+  0%, 100% { filter: brightness(1) contrast(1); }
+  50% { filter: brightness(1.2) contrast(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #FF6600, 0 0 10px #FF6600, 0 0 15px #FF6600; }
+  100% { box-shadow: 0 0 10px #FF6600, 0 0 20px #FF6600, 0 0 30px #FF6600; }
+}
+
+/* Tailwind Animation Utilities */
+@layer utilities {
+  .animate-speed-line {
+    animation: speed-line 3s infinite linear;
+  }
+  
+  .animate-title-glow {
+    animation: title-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 1s ease-out;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Island Navigation Animations */
+  .animate-island-float {
+    animation: island-float 6s ease-in-out infinite;
+  }
+  
+  .animate-nav-item-glow {
+    animation: nav-item-glow 2s ease-in-out infinite;
+  }
+}
+
+/* Additional Island Navigation Keyframes */
+@keyframes island-float {
+  0%, 100% { 
+    transform: translateY(0px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes nav-item-glow {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Advanced Island Navigation Effects */
+@keyframes island-entrance {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-50px) scale(0.8); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0px) scale(1); 
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes button-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.3), 0 0 10px rgba(255, 102, 0, 0.2), 0 0 15px rgba(255, 102, 0, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.5), 0 0 20px rgba(255, 102, 0, 0.3), 0 0 30px rgba(255, 102, 0, 0.2);
+  }
+}
+
+@keyframes logo-pulse {
+  0%, 100% { 
+    filter: brightness(1) saturate(1); 
+  }
+  50% { 
+    filter: brightness(1.2) saturate(1.3); 
+  }
+}
