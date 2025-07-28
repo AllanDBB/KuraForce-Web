@@ -1,0 +1,35 @@
+<svg width="600" height="180" viewBox="0 0 600 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#blur)">
+    <rect x="0" y="60" width="600" height="60" fill="url(#road)" />
+  </g>
+  <g filter="url(#glow)">
+    <path d="M120 120 Q140 100 180 110 Q220 120 260 110 Q300 100 340 120" stroke="#e2c044" stroke-width="6" fill="none" />
+  </g>
+  <g>
+    <ellipse cx="300" cy="90" rx="80" ry="28" fill="#222" opacity="0.18" />
+    <g>
+      <rect x="260" y="70" width="80" height="20" rx="10" fill="#222" />
+      <rect x="270" y="80" width="60" height="10" rx="5" fill="#e2c044" />
+      <rect x="285" y="75" width="30" height="8" rx="4" fill="#fff" opacity="0.7" />
+      <ellipse cx="270" cy="90" rx="7" ry="7" fill="#444" />
+      <ellipse cx="330" cy="90" rx="7" ry="7" fill="#444" />
+      <rect x="295" y="65" width="10" height="10" rx="5" fill="#22643c" />
+      <rect x="305" y="65" width="10" height="10" rx="5" fill="#22643c" />
+      <rect x="300" y="60" width="10" height="10" rx="5" fill="#fcf8e3" />
+    </g>
+    <rect x="250" y="90" width="100" height="8" rx="4" fill="#e2c044" opacity="0.5" />
+    <rect x="270" y="98" width="60" height="6" rx="3" fill="#fff" opacity="0.3" />
+  </g>
+  <defs>
+    <filter id="blur" x="-10" y="50" width="620" height="80" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="8" />
+    </filter>
+    <filter id="glow" x="100" y="80" width="260" height="60" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+    <linearGradient id="road" x1="0" y1="90" x2="600" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#444" />
+      <stop offset="1" stop-color="#222" />
+    </linearGradient>
+  </defs>
+</svg>

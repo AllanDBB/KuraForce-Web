@@ -1,4 +1,6 @@
-'use client';
+"use client";
+import Player from 'lottie-react';
+import f1Lottie from '../assets/f1-lottie-real.json' assert { type: 'json' };
 
 export default function Hero() {
 
@@ -16,6 +18,26 @@ export default function Hero() {
           `
         }}
       >
+        {/* Cinematic F1 Car Lottie Animation */}
+        <div style={{
+          position: 'absolute',
+          left: '50%',
+          top: '60%',
+          transform: 'translate(-50%, -50%)',
+          width: '60vw',
+          maxWidth: '700px',
+          opacity: 0.22,
+          filter: 'blur(1.5px) drop-shadow(0 8px 32px #e2c04488)',
+          pointerEvents: 'none',
+          zIndex: 1
+        }}>
+          <Player
+            animationData={f1Lottie}
+            autoplay
+            loop
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
         {/* Organic Texture Overlay */}
         <div 
           className="absolute inset-0 opacity-30"
@@ -157,10 +179,11 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
             <div 
-              className="w-3 h-3 rounded-full animate-pulse"
+              className="w-4 h-4 rounded-full animate-pulse shadow-lg"
               style={{
-                background: 'radial-gradient(circle, #fcf8e3 30%, #22643c 100%)',
-                animationDuration: '4s'
+                background: 'radial-gradient(circle, #fcf8e3 40%, #e2c044 100%)',
+                boxShadow: '0 0 12px 2px #e2c04488',
+                animationDuration: '3s'
               }}
             ></div>
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
@@ -176,15 +199,24 @@ export default function Hero() {
               display: 'inline-block'
             }}
           >
-            {['C','o','s','t','a',' ','R','i','c','a'].map((char, i) => (
-              <span
-                key={i}
-                className="gold-shine-letter"
-                style={{
-                  animationDelay: `${i * 0.35}s`
-                }}
-              >{char}</span>
-            ))}
+          {/* Costa */}
+          {['C','o','s','t','a'].map((char, i) => (
+            <span
+              key={i}
+              className="gold-shine-letter"
+              style={{ animationDelay: `${i * 0.35}s` }}
+            >{char}</span>
+          ))}
+          {/* Custom space */}
+          <span style={{ display: 'inline-block', width: '0.5em' }}></span>
+          {/* Rica */}
+          {['R','i','c','a'].map((char, i) => (
+            <span
+              key={i + 5}
+              className="gold-shine-letter"
+              style={{ animationDelay: `${(i + 5) * 0.35}s` }}
+            >{char}</span>
+          ))}
           </p>
         </div>
 
@@ -221,7 +253,7 @@ export default function Hero() {
 
       {/* Natural Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="relative">
+        <div className="relative flex flex-col items-center justify-center">
           <div className="w-10 h-10 border border-stone-300/40 rounded-full flex items-center justify-center animate-bounce backdrop-blur-sm">
             <div className="w-2 h-2 bg-gradient-to-b from-stone-200 to-green-600 rounded-full animate-pulse"></div>
           </div>
