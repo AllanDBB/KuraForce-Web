@@ -31,9 +31,9 @@ export default function NavigationIsland() {
   const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'Team', href: '#team' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Innovation', href: '#innovation' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About Us', href: '#who-we-are' },
+    { name: 'Sponsors', href: '#sponsors' },
+    { name: 'Contact', href: '#contact-info' }
   ]
 
   return (
@@ -113,7 +113,7 @@ export default function NavigationIsland() {
               isOnDarkSection ? 'bg-black/30 backdrop-blur-sm' : 'bg-white/95 border border-green-100'
             }`}
           >
-            {menuItems.slice(0, 4).map((item) => (
+            {menuItems.slice(0, 5).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
