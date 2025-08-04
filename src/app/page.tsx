@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Hero from '@/components/Hero';
 import NavigationIsland from '@/components/NavigationIsland';
@@ -55,16 +55,8 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, className = "" }
 };
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Simple client-side loading animation
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <main className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+    <main className="opacity-100">
       <NavigationIsland />
       <Hero />
 
