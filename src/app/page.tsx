@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Hero from '@/components/Hero';
 import NavigationIsland from '@/components/NavigationIsland';
 import TeamCarousel from '@/components/TeamCarousel';
+import { useHydrated } from '@/hooks/useHydrated';
 
 // VideoBackground Component
 interface VideoBackgroundProps {
@@ -56,11 +57,24 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, className = "" }
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const hydrated = useHydrated();
 
   useEffect(() => {
+    if (!hydrated) return;
     const timer = setTimeout(() => setIsLoaded(true), 800);
     return () => clearTimeout(timer);
-  }, []);
+  }, [hydrated]);
+
+  // Prevent flash of unstyled content during hydration
+  if (!hydrated) {
+    return (
+      <main className="opacity-0">
+        <NavigationIsland />
+        <Hero />
+        {/* Empty content to maintain layout */}
+      </main>
+    );
+  }
 
   return (
     <main className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -515,7 +529,11 @@ export default function Home() {
                             color: 'white',
                             boxShadow: '0 4px 12px rgba(184, 134, 11, 0.3)'
                           }}
-                          onClick={() => window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')}
+                          onClick={() => {
+                            if (typeof window !== 'undefined') {
+                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
+                            }
+                          }}
                         >
                           Learn More
                         </button>
@@ -607,7 +625,11 @@ export default function Home() {
                             color: 'white',
                             boxShadow: '0 3px 10px rgba(192, 192, 192, 0.3)'
                           }}
-                          onClick={() => window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')}
+                          onClick={() => {
+                            if (typeof window !== 'undefined') {
+                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
+                            }
+                          }}
                         >
                           Learn More
                         </button>
@@ -699,7 +721,11 @@ export default function Home() {
                             color: 'white',
                             boxShadow: '0 2px 8px rgba(205, 127, 50, 0.3)'
                           }}
-                          onClick={() => window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')}
+                          onClick={() => {
+                            if (typeof window !== 'undefined') {
+                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
+                            }
+                          }}
                         >
                           Learn More
                         </button>
@@ -1217,8 +1243,10 @@ export default function Home() {
                 <div className="text-center">
                   <button 
                     onClick={() => {
-                      navigator.clipboard.writeText('88311022');
-                      // You could add a toast notification here
+                      if (typeof navigator !== 'undefined' && navigator.clipboard) {
+                        navigator.clipboard.writeText('88311022');
+                        // You could add a toast notification here
+                      }
                     }}
                     className="relative inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-green-600 via-green-700 to-green-600 text-white font-bold rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl group-hover:from-green-700 group-hover:to-green-600 overflow-hidden"
                     style={{

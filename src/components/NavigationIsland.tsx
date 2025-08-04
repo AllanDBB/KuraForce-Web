@@ -8,6 +8,8 @@ export default function NavigationIsland() {
   const [isOnDarkSection, setIsOnDarkSection] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const handleScroll = () => {
       const scrollY = window.scrollY
       setIsScrolled(scrollY > 50)
@@ -16,7 +18,6 @@ export default function NavigationIsland() {
       const heroHeight = window.innerHeight
       const whoWeAreStart = heroHeight
       const whatWeDoStart = whoWeAreStart + window.innerHeight
-      const sponsorsStart = whatWeDoStart + window.innerHeight
       
       // Secciones oscuras: Hero, Who We Are
       // Secciones claras: What We Do, Sponsors
