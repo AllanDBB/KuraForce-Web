@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Image from 'next/image';
 import Hero from '@/components/Hero';
 import NavigationIsland from '@/components/NavigationIsland';
 import TeamCarousel from '@/components/TeamCarousel';
@@ -438,13 +437,13 @@ export default function Home() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 justify-items-center">
                 {[
-                  { name: "TechCorp", category: "Technology Partner", tier: "gold", image: "/KuraMembers/Mariana.jpg" },
-                  { name: "SpeedWorks", category: "Engineering Support", tier: "gold", image: "/KuraMembers/David.jpg" },
-                  { name: "InnovateMax", category: "Innovation Hub", tier: "gold", image: "/KuraMembers/Carolina.png" }
+                  { name: "TechCorp", category: "Technology Partner", tier: "gold" },
+                  { name: "SpeedWorks", category: "Engineering Support", tier: "gold" },
+                  { name: "InnovateMax", category: "Innovation Hub", tier: "gold" }
                 ].map((sponsor, index) => (
                   <div 
                     key={index}
-                    className="relative p-2 rounded-xl transition-all duration-300 hover:shadow-lg"
+                    className="relative p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
                     style={{
                       background: 'linear-gradient(135deg, #fff9e6 0%, #fef7cd 50%, #fef3b8 100%)',
                       border: '2px solid rgba(184, 134, 11, 0.2)',
@@ -454,69 +453,34 @@ export default function Home() {
                       maxWidth: '180px'
                     }}
                   >
-                    <div className="relative z-10 flex flex-col items-center h-full">
-                      <div className="mb-1 flex justify-center">
-                        <div 
-                          className="w-18 h-18 rounded-full flex items-center justify-center overflow-hidden"
-                          style={{
-                            background: 'linear-gradient(135deg, #B8860B 0%, #DAA520 100%)',
-                            boxShadow: '0 8px 25px rgba(184, 134, 11, 0.3)'
-                          }}
-                        >
-                          <Image
-                            src={sponsor.image}
-                            alt={sponsor.name}
-                            width={64}
-                            height={64}
-                            className="object-contain rounded-full"
-                            onError={(e) => {
-                              e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
-                                <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
-                                  <rect width="64" height="64" fill="#ffffff"/>
-                                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="22" fill="#B8860B" font-weight="bold">
-                                    ${sponsor.name.charAt(0)}
-                                  </text>
-                                </svg>
-                              `)}`;
-                            }}
-                          />
-                        </div>
+                    <div className="relative z-10 flex flex-col items-center h-full text-center">
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center mb-3"
+                        style={{
+                          background: 'linear-gradient(135deg, #B8860B 0%, #DAA520 100%)',
+                          boxShadow: '0 8px 25px rgba(184, 134, 11, 0.3)'
+                        }}
+                      >
+                        <span className="text-white text-2xl font-bold">
+                          {sponsor.name.charAt(0)}
+                        </span>
                       </div>
-                      <div className="text-center flex-grow flex flex-col justify-between">
-                        <div>
-                          <h3 
-                            className="font-black text-sm mb-0"
-                            style={{ 
-                              color: '#B8860B',
-                              fontFamily: 'var(--font-racing)',
-                              letterSpacing: '-0.01em'
-                            }}
-                          >
-                            {sponsor.name}
-                          </h3>
-                          <p 
-                            className="text-xs font-medium mb-1"
-                            style={{ color: '#4a5568' }}
-                          >
-                            {sponsor.category}
-                          </p>
-                        </div>
-                        <button 
-                          className="w-full py-1.5 px-2 rounded-lg text-xs font-semibold transition-all duration-300 hover:scale-105"
-                          style={{
-                            background: 'linear-gradient(135deg, #B8860B 0%, #DAA520 100%)',
-                            color: 'white',
-                            boxShadow: '0 4px 12px rgba(184, 134, 11, 0.3)'
-                          }}
-                          onClick={() => {
-                            if (typeof window !== 'undefined') {
-                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
-                            }
-                          }}
-                        >
-                          Learn More
-                        </button>
-                      </div>
+                      <h3 
+                        className="font-black text-sm mb-1"
+                        style={{ 
+                          color: '#B8860B',
+                          fontFamily: 'var(--font-racing)',
+                          letterSpacing: '-0.01em'
+                        }}
+                      >
+                        {sponsor.name}
+                      </h3>
+                      <p 
+                        className="text-xs font-medium"
+                        style={{ color: '#4a5568' }}
+                      >
+                        {sponsor.category}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -533,14 +497,14 @@ export default function Home() {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 justify-items-center">
                 {[
-                  { name: "InnovateCR", category: "Innovation Hub", tier: "silver", image: "/KuraMembers/Alguien1.jpg" },
-                  { name: "RaceTech", category: "Racing Solutions", tier: "silver", image: "/KuraMembers/Alguien2.jpg" },
-                  { name: "FutureForge", category: "Manufacturing", tier: "silver", image: "/KuraMembers/Alguien3.jpg" },
-                  { name: "SpeedFlow", category: "Aerodynamics", tier: "silver", image: "/KuraMembers/Verónica.jpg" }
+                  { name: "InnovateCR", category: "Innovation Hub", tier: "silver" },
+                  { name: "RaceTech", category: "Racing Solutions", tier: "silver" },
+                  { name: "FutureForge", category: "Manufacturing", tier: "silver" },
+                  { name: "SpeedFlow", category: "Aerodynamics", tier: "silver" }
                 ].map((sponsor, index) => (
                   <div 
                     key={index}
-                    className="relative p-2 rounded-xl transition-all duration-300 hover:shadow-lg"
+                    className="relative p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
                     style={{
                       background: 'linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 50%, #e8eaed 100%)',
                       border: '2px solid rgba(192, 192, 192, 0.2)',
@@ -550,69 +514,34 @@ export default function Home() {
                       maxWidth: '160px'
                     }}
                   >
-                    <div className="relative z-10 flex flex-col items-center h-full">
-                      <div className="mb-1 flex justify-center">
-                        <div 
-                          className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden"
-                          style={{
-                            background: 'linear-gradient(135deg, #C0C0C0 0%, #D3D3D3 100%)',
-                            boxShadow: '0 6px 20px rgba(192, 192, 192, 0.25)'
-                          }}
-                        >
-                          <Image
-                            src={sponsor.image}
-                            alt={sponsor.name}
-                            width={56}
-                            height={56}
-                            className="object-contain rounded-full"
-                            onError={(e) => {
-                              e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
-                                <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-                                  <rect width="56" height="56" fill="#ffffff"/>
-                                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="20" fill="#C0C0C0" font-weight="bold">
-                                    ${sponsor.name.charAt(0)}
-                                  </text>
-                                </svg>
-                              `)}`;
-                            }}
-                          />
-                        </div>
+                    <div className="relative z-10 flex flex-col items-center h-full text-center">
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center mb-3"
+                        style={{
+                          background: 'linear-gradient(135deg, #C0C0C0 0%, #D3D3D3 100%)',
+                          boxShadow: '0 6px 20px rgba(192, 192, 192, 0.25)'
+                        }}
+                      >
+                        <span className="text-white text-2xl font-bold">
+                          {sponsor.name.charAt(0)}
+                        </span>
                       </div>
-                      <div className="text-center flex-grow flex flex-col justify-between">
-                        <div>
-                          <h3 
-                            className="font-black text-sm mb-0"
-                            style={{ 
-                              color: '#6b7280',
-                              fontFamily: 'var(--font-racing)',
-                              letterSpacing: '-0.01em'
-                            }}
-                          >
-                            {sponsor.name}
-                          </h3>
-                          <p 
-                            className="text-xs font-medium mb-1"
-                            style={{ color: '#4a5568' }}
-                          >
-                            {sponsor.category}
-                          </p>
-                        </div>
-                        <button 
-                          className="w-full py-1.5 px-2 rounded-lg text-xs font-semibold transition-all duration-300 hover:scale-105"
-                          style={{
-                            background: 'linear-gradient(135deg, #C0C0C0 0%, #D3D3D3 100%)',
-                            color: 'white',
-                            boxShadow: '0 3px 10px rgba(192, 192, 192, 0.3)'
-                          }}
-                          onClick={() => {
-                            if (typeof window !== 'undefined') {
-                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
-                            }
-                          }}
-                        >
-                          Learn More
-                        </button>
-                      </div>
+                      <h3 
+                        className="font-black text-sm mb-1"
+                        style={{ 
+                          color: '#6b7280',
+                          fontFamily: 'var(--font-racing)',
+                          letterSpacing: '-0.01em'
+                        }}
+                      >
+                        {sponsor.name}
+                      </h3>
+                      <p 
+                        className="text-xs font-medium"
+                        style={{ color: '#4a5568' }}
+                      >
+                        {sponsor.category}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -629,14 +558,14 @@ export default function Home() {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 justify-items-center">
                 {[
-                  { name: "VelocityLab", category: "Research Partner", tier: "bronze", image: "/KuraMembers/Fabricio.jpg" },
-                  { name: "PrecisionCo", category: "Precision Tools", tier: "bronze", image: "/KuraMembers/logo.png" },
-                  { name: "AeroFlow", category: "Aerodynamics", tier: "bronze", image: "/KuraMembers/Mariana.jpg" },
-                  { name: "FastTrack", category: "Track Support", tier: "bronze", image: "/KuraMembers/David.jpg" }
+                  { name: "VelocityLab", category: "Research Partner", tier: "bronze" },
+                  { name: "PrecisionCo", category: "Precision Tools", tier: "bronze" },
+                  { name: "AeroFlow", category: "Aerodynamics", tier: "bronze" },
+                  { name: "FastTrack", category: "Track Support", tier: "bronze" }
                 ].map((sponsor, index) => (
                   <div 
                     key={index}
-                    className="relative p-2 rounded-xl transition-all duration-300 hover:shadow-lg"
+                    className="relative p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
                     style={{
                       background: 'linear-gradient(135deg, #fff8f0 0%, #fef5e7 50%, #fef0d9 100%)',
                       border: '2px solid rgba(205, 127, 50, 0.15)',
@@ -646,69 +575,34 @@ export default function Home() {
                       maxWidth: '160px'
                     }}
                   >
-                    <div className="relative z-10 flex flex-col items-center h-full">
-                      <div className="mb-1 flex justify-center">
-                        <div 
-                          className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden"
-                          style={{
-                            background: 'linear-gradient(135deg, #CD7F32 0%, #D2691E 100%)',
-                            boxShadow: '0 4px 15px rgba(205, 127, 50, 0.2)'
-                          }}
-                        >
-                          <Image
-                            src={sponsor.image}
-                            alt={sponsor.name}
-                            width={56}
-                            height={56}
-                            className="object-contain rounded-full"
-                            onError={(e) => {
-                              e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
-                                <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-                                  <rect width="56" height="56" fill="#ffffff"/>
-                                  <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="20" fill="#CD7F32" font-weight="bold">
-                                    ${sponsor.name.charAt(0)}
-                                  </text>
-                                </svg>
-                              `)}`;
-                            }}
-                          />
-                        </div>
+                    <div className="relative z-10 flex flex-col items-center h-full text-center">
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center mb-3"
+                        style={{
+                          background: 'linear-gradient(135deg, #CD7F32 0%, #D2691E 100%)',
+                          boxShadow: '0 4px 15px rgba(205, 127, 50, 0.2)'
+                        }}
+                      >
+                        <span className="text-white text-2xl font-bold">
+                          {sponsor.name.charAt(0)}
+                        </span>
                       </div>
-                      <div className="text-center flex-grow flex flex-col justify-between">
-                        <div>
-                          <h3 
-                            className="font-black text-sm mb-0"
-                            style={{ 
-                              color: '#CD7F32',
-                              fontFamily: 'var(--font-racing)',
-                              letterSpacing: '-0.01em'
-                            }}
-                          >
-                            {sponsor.name}
-                          </h3>
-                          <p 
-                            className="text-xs font-medium mb-1"
-                            style={{ color: '#4a5568' }}
-                          >
-                            {sponsor.category}
-                          </p>
-                        </div>
-                        <button 
-                          className="w-full py-1.5 px-2 rounded-lg text-xs font-semibold transition-all duration-300 hover:scale-105"
-                          style={{
-                            background: 'linear-gradient(135deg, #CD7F32 0%, #D2691E 100%)',
-                            color: 'white',
-                            boxShadow: '0 2px 8px rgba(205, 127, 50, 0.3)'
-                          }}
-                          onClick={() => {
-                            if (typeof window !== 'undefined') {
-                              window.open(`https://www.${sponsor.name.toLowerCase()}.com`, '_blank')
-                            }
-                          }}
-                        >
-                          Learn More
-                        </button>
-                      </div>
+                      <h3 
+                        className="font-black text-sm mb-1"
+                        style={{ 
+                          color: '#CD7F32',
+                          fontFamily: 'var(--font-racing)',
+                          letterSpacing: '-0.01em'
+                        }}
+                      >
+                        {sponsor.name}
+                      </h3>
+                      <p 
+                        className="text-xs font-medium"
+                        style={{ color: '#4a5568' }}
+                      >
+                        {sponsor.category}
+                      </p>
                     </div>
                   </div>
                 ))}
