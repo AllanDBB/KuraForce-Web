@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Hero from '@/components/Hero';
 import NavigationIsland from '@/components/NavigationIsland';
 import TeamCarousel from '@/components/TeamCarousel';
-import { useHydrated } from '@/hooks/useHydrated';
 
 // VideoBackground Component
 interface VideoBackgroundProps {
@@ -57,24 +56,12 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, className = "" }
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const hydrated = useHydrated();
 
   useEffect(() => {
-    if (!hydrated) return;
-    const timer = setTimeout(() => setIsLoaded(true), 800);
+    // Simple client-side loading animation
+    const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
-  }, [hydrated]);
-
-  // Prevent flash of unstyled content during hydration
-  if (!hydrated) {
-    return (
-      <main className="opacity-0">
-        <NavigationIsland />
-        <Hero />
-        {/* Empty content to maintain layout */}
-      </main>
-    );
-  }
+  }, []);
 
   return (
     <main className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
