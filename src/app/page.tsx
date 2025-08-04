@@ -71,6 +71,35 @@ export default function Home() {
       <section id="who-we-are" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #0f1419 0%, #1a332a 25%, #153523 50%, #0a1f15 75%, #000000 100%)`
       }}>
+        {/* Simple Video Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              filter: 'brightness(0.3) contrast(1.2)',
+            }}
+          >
+            <source src="/1.mp4" type="video/mp4" />
+          </video>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `
+                linear-gradient(135deg, 
+                  rgba(15, 20, 25, 0.8) 0%, 
+                  rgba(26, 51, 42, 0.7) 25%, 
+                  rgba(21, 53, 35, 0.8) 50%, 
+                  rgba(10, 31, 21, 0.9) 75%, 
+                  rgba(0, 0, 0, 0.8) 100%
+                )
+              `,
+            }}
+          ></div>
+        </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Section Header */}
@@ -567,6 +596,35 @@ export default function Home() {
       <section id="contact-info" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #0f1419 0%, #1a332a 25%, #153523 50%, #0a1f15 75%, #000000 100%)`
       }}>
+        {/* Simple Video Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              filter: 'brightness(0.3) contrast(1.2)',
+            }}
+          >
+            <source src="/2.mp4" type="video/mp4" />
+          </video>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `
+                linear-gradient(135deg, 
+                  rgba(15, 20, 25, 0.8) 0%, 
+                  rgba(26, 51, 42, 0.7) 25%, 
+                  rgba(21, 53, 35, 0.8) 50%, 
+                  rgba(10, 31, 21, 0.9) 75%, 
+                  rgba(0, 0, 0, 0.8) 100%
+                )
+              `,
+            }}
+          ></div>
+        </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
           {/* Section Header */}
