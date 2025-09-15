@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
 
       {/* Our Team Section */}
-      <section id="team" className="min-h-screen flex flex-col items-center justify-center py-20 px-4 relative overflow-hidden" style={{
+      <section id="team" className="min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 px-4 relative overflow-hidden" style={{
         background: `
           linear-gradient(135deg, #f8fffe 0%, #f0f9f6 25%, #ffffff 50%, #f5fdf9 75%, #ffffff 100%)
         `
@@ -19,9 +19,9 @@ export default function Home() {
         {/* ...no background pattern, just gradient... */}
         <div className="max-w-6xl mx-auto text-center relative z-10">
           {/* Section Header */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-10 md:mb-12">
             <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-black mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6"
               style={{
                 fontFamily: 'var(--font-racing)',
                 background: 'linear-gradient(135deg, #22643c 0%, #34a853 50%, #1a4d2e 100%)',
@@ -34,22 +34,22 @@ export default function Home() {
               OUR TEAM
             </h2>
             
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
               <div 
-                className="w-4 h-4 rounded-full animate-pulse"
+                className="w-3 sm:w-4 h-3 sm:h-4 rounded-full animate-pulse"
                 style={{
                   background: 'radial-gradient(circle, #22643c 40%, #34a853 100%)',
                   boxShadow: '0 0 12px 2px rgba(34, 100, 60, 0.3)',
                   animationDuration: '3s'
                 }}
               ></div>
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
             </div>
             
             <div className="flex justify-center">
               <p 
-                className="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-center"
+                className="text-sm sm:text-lg md:text-xl font-light max-w-3xl leading-relaxed text-center px-4"
                 style={{
                   fontFamily: 'var(--font-accent)',
                   color: '#2d5a3d',
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
+      <section id="who-we-are" className="relative min-h-screen flex flex-col items-center justify-center py-16 sm:py-20 md:py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #0f1419 0%, #1a332a 25%, #153523 50%, #0a1f15 75%, #000000 100%)`
       }}>
         {/* Simple Video Background */}
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Section Header */}
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-black mb-16"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 sm:mb-12 md:mb-16"
             style={{
               fontFamily: 'var(--font-racing)',
               background: 'linear-gradient(135deg, #fcf8e3 0%, #ffffff 50%, #e8e2d0 100%)',
@@ -118,9 +118,9 @@ export default function Home() {
           </h2>
 
           {/* Content */}
-          <div className="max-w-3xl mx-auto mb-20">
+          <div className="max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
             <p 
-              className="text-xl md:text-2xl leading-relaxed mb-16 text-center"
+              className="text-lg sm:text-xl md:text-2xl leading-relaxed mb-8 sm:mb-12 md:mb-16 text-center px-4"
               style={{
                 fontFamily: 'var(--font-primary)',
                 color: '#c8ccc8',
@@ -132,7 +132,7 @@ export default function Home() {
             </p>
             
             <p 
-              className="text-lg leading-relaxed text-center"
+              className="text-base sm:text-lg leading-relaxed text-center px-4"
               style={{
                 fontFamily: 'var(--font-accent)',
                 color: '#a8aca8',
@@ -143,10 +143,10 @@ export default function Home() {
               precision, and Costa Rican excellence on the global stage.
             </p>
           </div>
-          <div className="h-16"></div>
+          <div className="h-8 sm:h-12 md:h-16"></div>
           {/* Team Stats */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
               {[
                 { number: "8", label: "Team Members" },
                 { number: "100%", label: "Dedication" },
@@ -154,13 +154,13 @@ export default function Home() {
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div 
-                    className="text-4xl md:text-5xl font-black mb-3"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-3"
                     style={{ color: '#22643c' }}
                   >
                     {stat.number}
                   </div>
                   <div 
-                    className="text-sm uppercase tracking-wider"
+                    className="text-xs sm:text-sm uppercase tracking-wider"
                     style={{ color: '#a8b3a8' }}
                   >
                     {stat.label}
@@ -173,14 +173,14 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section id="what-we-do" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
+      <section id="what-we-do" className="relative min-h-screen flex flex-col items-center justify-center py-16 sm:py-20 md:py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #f8fffe 0%, #f0f9f6 25%, #ffffff 50%, #f5fdf9 75%, #ffffff 100%)`
       }}>
         <div className="max-w-6xl mx-auto text-center">
           {/* Section Header - Mejorado para mejor sinergia tipográfica */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6"
               style={{
                 fontFamily: 'var(--font-racing)',
                 background: 'linear-gradient(135deg, #22643c 0%, #34a853 30%, #1a4d2e 60%, #22643c 100%)',
@@ -193,10 +193,10 @@ export default function Home() {
             >
               WHAT WE DO
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-green-400 mx-auto mb-8 rounded-full"></div>
+            <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-green-600 to-green-400 mx-auto mb-6 sm:mb-8 rounded-full"></div>
             <div className="flex justify-center items-center w-full">
               <p 
-                className="text-lg md:text-xl max-w-3xl text-center font-medium"
+                className="text-base sm:text-lg md:text-xl max-w-3xl text-center font-medium px-4"
                 style={{
                   fontFamily: 'var(--font-primary)',
                   color: '#2d3748',
@@ -212,7 +212,7 @@ export default function Home() {
           </div>
 
           {/* Activities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20 justify-items-center px-4">
             {/* ...existing code... */}
             {/* ...existing activity cards... */}
             {[
@@ -239,10 +239,10 @@ export default function Home() {
             ].map((activity, index) => (
               <div 
                 key={index} 
-                className="bg-white/95 backdrop-blur-sm rounded-xl border border-green-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 px-6 py-8 flex flex-col items-center justify-center text-center"
+                className="bg-white/95 backdrop-blur-sm rounded-xl border border-green-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 px-4 sm:px-6 py-6 sm:py-8 flex flex-col items-center justify-center text-center w-full max-w-sm"
               >
                 <div 
-                  className="text-5xl font-light text-green-700 mb-6"
+                  className="text-4xl sm:text-5xl font-light text-green-700 mb-4 sm:mb-6"
                   style={{ 
                     fontFamily: 'var(--font-racing)',
                     textShadow: '0 2px 4px rgba(34, 100, 60, 0.15)'
@@ -251,7 +251,7 @@ export default function Home() {
                   {activity.symbol}
                 </div>
                 <h3 
-                  className="text-xl font-black text-green-800 mb-5"
+                  className="text-lg sm:text-xl font-black text-green-800 mb-3 sm:mb-5"
                   style={{ 
                     fontFamily: 'var(--font-racing)',
                     letterSpacing: '0.015em',
@@ -261,7 +261,7 @@ export default function Home() {
                   {activity.title}
                 </h3>
                 <p 
-                  className="text-sm text-gray-700 leading-relaxed flex-1 flex items-center justify-center text-center font-medium"
+                  className="text-xs sm:text-sm text-gray-700 leading-relaxed flex-1 flex items-center justify-center text-center font-medium"
                   style={{ 
                     fontFamily: 'var(--font-primary)',
                     lineHeight: '1.6',
@@ -275,10 +275,10 @@ export default function Home() {
           </div>
 
           {/* Mission Quote */}
-          <div className="h-12"></div>
-          <div className="flex flex-col items-center justify-center w-full">
+          <div className="h-8 sm:h-12"></div>
+          <div className="flex flex-col items-center justify-center w-full px-4">
             <blockquote 
-              className="text-2xl md:text-3xl font-light italic leading-relaxed mb-6 text-center w-full"
+              className="text-xl sm:text-2xl md:text-3xl font-light italic leading-relaxed mb-4 sm:mb-6 text-center w-full"
               style={{
                 color: '#22643c',
                 fontFamily: 'var(--font-accent)',
@@ -290,7 +290,7 @@ export default function Home() {
               &ldquo;Engineering the future, one innovation at a time.&rdquo;
             </blockquote>
             <cite 
-              className="text-sm font-semibold uppercase tracking-wider text-center w-full"
+              className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-center w-full"
               style={{ 
                 color: '#4a5568',
                 textAlign: 'center',
@@ -305,7 +305,7 @@ export default function Home() {
 
       {/* ...existing code... */}
       {/* Sponsors Section */}
-      <section id="sponsors" className="relative min-h-screen flex flex-col items-center justify-center py-20 px-4 overflow-hidden" style={{
+      <section id="sponsors" className="relative min-h-screen flex flex-col items-center justify-center py-16 sm:py-20 px-4 overflow-hidden" style={{
         background: `
           linear-gradient(135deg, #f8fffe 0%, #f0f9f6 25%, #ffffff 50%, #f5fdf9 75%, #ffffff 100%)
         `
@@ -349,9 +349,9 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           {/* Section Header */}
-          <div className="mb-20">
+          <div className="mb-12 sm:mb-16 md:mb-20">
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 relative"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 sm:mb-8 relative"
               style={{
                 fontFamily: 'var(--font-racing)',
                 background: 'linear-gradient(135deg, #22643c 0%, #34a853 30%, #1a4d2e 60%, #22643c 100%)',
@@ -365,9 +365,9 @@ export default function Home() {
               OUR SPONSORS
               {/* Speed Effect */}
               <div 
-                className="absolute -right-4 top-1/2 transform -translate-y-1/2"
+                className="absolute -right-2 sm:-right-4 top-1/2 transform -translate-y-1/2"
                 style={{
-                  width: '40px',
+                  width: '30px',
                   height: '2px',
                   background: 'linear-gradient(90deg, #22643c 0%, transparent 100%)',
                   animation: 'speedBurst 2s ease-in-out infinite'
@@ -375,10 +375,10 @@ export default function Home() {
               ></div>
             </h2>
             
-            <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+            <div className="flex items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
               <div 
-                className="relative w-5 h-5 rounded-full"
+                className="relative w-4 sm:w-5 h-4 sm:h-5 rounded-full"
                 style={{
                   background: 'radial-gradient(circle, #22643c 40%, #34a853 100%)',
                   boxShadow: '0 0 12px 3px rgba(34, 100, 60, 0.3)',
@@ -388,11 +388,11 @@ export default function Home() {
                 {/* Racing Tire Effect */}
                 <div className="absolute inset-1 rounded-full border-2 border-white/30" style={{ animation: 'spin 2s linear infinite' }}></div>
               </div>
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+              <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
             </div>
             
             <p 
-              className="text-lg md:text-xl font-light max-w-4xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl font-light max-w-4xl mx-auto leading-relaxed px-4"
               style={{
                 fontFamily: 'var(--font-accent)',
                 color: '#2d5a3d',
@@ -407,13 +407,13 @@ export default function Home() {
           </div>
 
           {/* Racing Grid Layout - Sponsors por categorías */}
-          <div className="mb-16 flex flex-col items-center mt-12">
+          <div className="mb-12 sm:mb-16 flex flex-col items-center mt-8 sm:mt-12">
             {/* Gold Sponsors */}
-            <div className="mb-16 w-full max-w-4xl">
-              <h3 className="text-2xl font-bold text-center mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#B8860B' }}>
+            <div className="mb-12 sm:mb-16 w-full max-w-4xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-12 md:mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#B8860B' }}>
                 GOLD SPONSORS
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center px-4">
                 {[
                   { name: "TechCorp", category: "Technology Partner", tier: "gold" },
                   { name: "SpeedWorks", category: "Engineering Support", tier: "gold" },
@@ -421,30 +421,28 @@ export default function Home() {
                 ].map((sponsor, index) => (
                   <div 
                     key={index}
-                    className="relative p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
+                    className="relative p-4 sm:p-6 rounded-xl transition-all duration-300 hover:shadow-lg w-full max-w-xs"
                     style={{
                       background: 'linear-gradient(135deg, #fff9e6 0%, #fef7cd 50%, #fef3b8 100%)',
                       border: '2px solid rgba(184, 134, 11, 0.2)',
                       boxShadow: '0 6px 25px rgba(184, 134, 11, 0.1)',
-                      minHeight: '120px',
-                      width: '100%',
-                      maxWidth: '180px'
+                      minHeight: '120px'
                     }}
                   >
                     <div className="relative z-10 flex flex-col items-center h-full text-center">
                       <div 
-                        className="w-16 h-16 rounded-full flex items-center justify-center mb-3"
+                        className="w-12 sm:w-16 h-12 sm:h-16 rounded-full flex items-center justify-center mb-3"
                         style={{
                           background: 'linear-gradient(135deg, #B8860B 0%, #DAA520 100%)',
                           boxShadow: '0 8px 25px rgba(184, 134, 11, 0.3)'
                         }}
                       >
-                        <span className="text-white text-2xl font-bold">
+                        <span className="text-white text-lg sm:text-2xl font-bold">
                           {sponsor.name.charAt(0)}
                         </span>
                       </div>
                       <h3 
-                        className="font-black text-sm mb-1"
+                        className="font-black text-xs sm:text-sm mb-1"
                         style={{ 
                           color: '#B8860B',
                           fontFamily: 'var(--font-racing)',
@@ -466,14 +464,14 @@ export default function Home() {
             </div>
 
             {/* Espacio adicional entre Gold y Silver */}
-            <div className="h-8"></div>
+            <div className="h-6 sm:h-8"></div>
 
             {/* Silver Sponsors */}
-            <div className="mb-16 w-full max-w-5xl mt-32">
-              <h3 className="text-xl font-bold text-center mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#C0C0C0' }}>
+            <div className="mb-12 sm:mb-16 w-full max-w-5xl mt-16 sm:mt-24 md:mt-32">
+              <h3 className="text-lg sm:text-xl font-bold text-center mb-8 sm:mb-12 md:mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#C0C0C0' }}>
                 SILVER SPONSORS
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 justify-items-center px-4">
                 {[
                   { name: "InnovateCR", category: "Innovation Hub", tier: "silver" },
                   { name: "RaceTech", category: "Racing Solutions", tier: "silver" },
@@ -482,30 +480,28 @@ export default function Home() {
                 ].map((sponsor, index) => (
                   <div 
                     key={index}
-                    className="relative p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
+                    className="relative p-3 sm:p-4 rounded-xl transition-all duration-300 hover:shadow-lg w-full max-w-xs"
                     style={{
                       background: 'linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 50%, #e8eaed 100%)',
                       border: '2px solid rgba(192, 192, 192, 0.2)',
                       boxShadow: '0 4px 20px rgba(192, 192, 192, 0.08)',
-                      minHeight: '120px',
-                      width: '100%',
-                      maxWidth: '160px'
+                      minHeight: '110px'
                     }}
                   >
                     <div className="relative z-10 flex flex-col items-center h-full text-center">
                       <div 
-                        className="w-16 h-16 rounded-full flex items-center justify-center mb-3"
+                        className="w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 rounded-full flex items-center justify-center mb-2 sm:mb-3"
                         style={{
                           background: 'linear-gradient(135deg, #C0C0C0 0%, #D3D3D3 100%)',
                           boxShadow: '0 6px 20px rgba(192, 192, 192, 0.25)'
                         }}
                       >
-                        <span className="text-white text-2xl font-bold">
+                        <span className="text-white text-base sm:text-lg md:text-2xl font-bold">
                           {sponsor.name.charAt(0)}
                         </span>
                       </div>
                       <h3 
-                        className="font-black text-sm mb-1"
+                        className="font-black text-xs sm:text-sm mb-1"
                         style={{ 
                           color: '#6b7280',
                           fontFamily: 'var(--font-racing)',
@@ -527,14 +523,14 @@ export default function Home() {
             </div>
 
             {/* Espacio adicional entre Silver y Bronze */}
-            <div className="h-8"></div>
+            <div className="h-6 sm:h-8"></div>
 
             {/* Bronze Sponsors */}
-            <div className="w-full max-w-4xl mt-20">
-              <h3 className="text-lg font-bold text-center mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#CD7F32' }}>
+            <div className="w-full max-w-4xl mt-12 sm:mt-16 md:mt-20">
+              <h3 className="text-base sm:text-lg font-bold text-center mb-8 sm:mb-12 md:mb-16" style={{ fontFamily: 'var(--font-racing)', color: '#CD7F32' }}>
                 BRONZE SPONSORS
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 justify-items-center px-4">
                 {[
                   { name: "VelocityLab", category: "Research Partner", tier: "bronze" },
                   { name: "PrecisionCo", category: "Precision Tools", tier: "bronze" },
@@ -593,7 +589,7 @@ export default function Home() {
       </section>
 
       {/* Contact Info Section */}
-      <section id="contact-info" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
+      <section id="contact-info" className="relative min-h-screen flex flex-col items-center justify-center py-16 sm:py-20 md:py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #0f1419 0%, #1a332a 25%, #153523 50%, #0a1f15 75%, #000000 100%)`
       }}>
         {/* Simple Video Background */}
@@ -628,9 +624,9 @@ export default function Home() {
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
           {/* Section Header */}
-          <div className="mb-16">
+          <div className="mb-12 sm:mb-16">
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 sm:mb-8"
               style={{
                 fontFamily: 'var(--font-racing)',
                 background: 'linear-gradient(135deg, #fcf8e3 0%, #ffffff 50%, #e8e2d0 100%)',
@@ -643,21 +639,21 @@ export default function Home() {
               CONTACT INFO
             </h2>
             
-            <div className="flex items-center justify-center gap-6 mb-8">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+            <div className="flex items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
               <div 
-                className="w-5 h-5 rounded-full animate-pulse"
+                className="w-4 sm:w-5 h-4 sm:h-5 rounded-full animate-pulse"
                 style={{
                   background: 'radial-gradient(circle, #fcf8e3 40%, #ffffff 100%)',
                   boxShadow: '0 0 15px 3px rgba(252, 248, 227, 0.4)',
                   animationDuration: '2s'
                 }}
               ></div>
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+              <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
             </div>
             
             <p 
-              className="text-lg md:text-xl font-light max-w-4xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl font-light max-w-4xl mx-auto leading-relaxed px-4"
               style={{
                 fontFamily: 'var(--font-accent)',
                 color: '#c8ccc8',
@@ -670,29 +666,29 @@ export default function Home() {
           </div>
 
           {/* Contact Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 px-4">
             {/* Email Contact */}
             <div 
-              className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 w-full"
               style={{
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(252, 248, 227, 0.1)'
               }}
             >
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <div 
-                  className="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"
+                  className="w-12 sm:w-16 h-12 sm:h-16 mx-auto rounded-full flex items-center justify-center mb-4"
                   style={{
                     background: 'linear-gradient(135deg, #fcf8e3 0%, #ffffff 100%)',
                     boxShadow: '0 6px 20px rgba(252, 248, 227, 0.3)'
                   }}
                 >
-                  <svg width="24" height="24" fill="#22643c" viewBox="0 0 24 24">
+                  <svg width="20" height="20" fill="#22643c" viewBox="0 0 24 24" className="sm:w-6 sm:h-6">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                 </div>
               </div>
               <h3 
-                className="text-xl font-black mb-3"
+                className="text-lg sm:text-xl font-black mb-2 sm:mb-3"
                 style={{ 
                   color: '#fcf8e3',
                   fontFamily: 'var(--font-racing)'
@@ -701,14 +697,14 @@ export default function Home() {
                 EMAIL US
               </h3>
               <p 
-                className="text-sm mb-4"
+                className="text-xs sm:text-sm mb-3 sm:mb-4"
                 style={{ color: '#a8aca8' }}
               >
                 General inquiries and collaboration
               </p>
               <a 
                 href="mailto:contact@kuraforce.com"
-                className="text-yellow-200 hover:text-yellow-100 font-medium transition-colors duration-300"
+                className="text-yellow-200 hover:text-yellow-100 font-medium transition-colors duration-300 text-sm sm:text-base break-all"
               >
                 contact@kuraforce.com
               </a>
@@ -803,7 +799,7 @@ export default function Home() {
       </section>
 
       {/* How to Support Us Section */}
-      <section id="sponsor-us" className="relative min-h-screen flex flex-col items-center justify-center py-24 px-4 overflow-hidden" style={{
+      <section id="sponsor-us" className="relative min-h-screen flex flex-col items-center justify-center py-16 sm:py-20 md:py-24 px-4 overflow-hidden" style={{
         background: `linear-gradient(135deg, #f8fffe 0%, #f0f9f6 25%, #ffffff 50%, #f5fdf9 75%, #ffffff 100%)`
       }}>
         {/* F1 Speed Lines Background */}
@@ -827,9 +823,9 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           {/* Section Header */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-10 md:mb-12">
             <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-black mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6"
               style={{
                 fontFamily: 'var(--font-racing)',
                 background: 'linear-gradient(135deg, #22643c 0%, #34a853 30%, #1a4d2e 60%, #22643c 100%)',
@@ -842,24 +838,24 @@ export default function Home() {
               SUPPORT OUR MISSION
             </h2>
             
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
               <div 
-                className="w-4 h-4 rounded-full animate-pulse"
+                className="w-3 sm:w-4 h-3 sm:h-4 rounded-full animate-pulse"
                 style={{
                   background: 'radial-gradient(circle, #22643c 40%, #34a853 100%)',
                   boxShadow: '0 0 12px 2px rgba(34, 100, 60, 0.3)',
                   animationDuration: '3s'
                 }}
               ></div>
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent via-green-600 to-transparent"></div>
             </div>
             
             
           </div>
 
           {/* Sponsorship Options Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16 md:mb-20 px-4">
             
             {/* Sponsorship Packages */}
             <div className="relative group">
@@ -869,17 +865,17 @@ export default function Home() {
               ></div>
               
               {/* Main Card */}
-              <div className="relative bg-white/98 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-green-100/50 hover:border-green-300/70 transition-all duration-500 hover:-translate-y-3 hover:shadow-4xl overflow-hidden">
+              <div className="relative bg-white/98 backdrop-blur-lg rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-green-100/50 hover:border-green-300/70 transition-all duration-500 hover:-translate-y-3 hover:shadow-4xl overflow-hidden">
                 {/* Racing Lines Background */}
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+                <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 opacity-5">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-transparent transform rotate-45"></div>
                   <div className="absolute inset-2 bg-gradient-to-br from-green-500 to-transparent transform rotate-45"></div>
                 </div>
                 
                 {/* Icon Section */}
-                <div className="relative mb-8">
+                <div className="relative mb-6 sm:mb-8">
                   <div 
-                    className="w-24 h-24 mx-auto rounded-3xl mb-6 flex items-center justify-center group-hover:scale-105 transition-all duration-500 relative overflow-hidden"
+                    className="w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 mx-auto rounded-3xl mb-4 sm:mb-6 flex items-center justify-center group-hover:scale-105 transition-all duration-500 relative overflow-hidden"
                     style={{
                       background: 'linear-gradient(135deg, #22643c 0%, #34a853 50%, #1a4d2e 100%)',
                       boxShadow: '0 20px 40px rgba(34, 100, 60, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset'
@@ -888,16 +884,16 @@ export default function Home() {
                     {/* Shimmer Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:-translate-x-full transition-transform duration-1000"></div>
                     
-                    <svg width="48" height="48" fill="white" viewBox="0 0 24 24" className="relative z-10">
+                    <svg width="32" height="32" fill="white" viewBox="0 0 24 24" className="relative z-10 sm:w-10 sm:h-10 lg:w-12 lg:h-12">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
                   </div>
                 </div>
                 
                 {/* Content */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-6 sm:mb-8">
                   <h3 
-                    className="text-2xl font-black mb-4 bg-gradient-to-r from-green-700 to-green-600 bg-clip-text text-transparent"
+                    className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-green-700 to-green-600 bg-clip-text text-transparent"
                     style={{
                       fontFamily: 'var(--font-racing)',
                       letterSpacing: '-0.01em'
@@ -905,22 +901,22 @@ export default function Home() {
                   >
                     SPONSORSHIP PACKAGES
                   </h3>
-                  <p className="text-gray-600 leading-relaxed font-medium text-base">
+                  <p className="text-gray-600 leading-relaxed font-medium text-sm sm:text-base">
                     Partner with us for maximum visibility on our race car, competitions, and digital platforms. 
                     <span className="text-green-700 font-semibold">Professional motorsport marketing.</span>
                   </p>
                 </div>
                 
                 {/* Features List */}
-                <div className="mb-8 space-y-3">
+                <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-3">
                   {[
                     'Logo on race car',
                     'Social media presence',
                     'Event partnerships'
                   ].map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-green-600"></div>
+                    <div key={idx} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                      <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-green-600"></div>
                       </div>
                       <span className="text-gray-700 font-medium">{feature}</span>
                     </div>
