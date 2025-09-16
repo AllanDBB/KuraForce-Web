@@ -11,7 +11,7 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   // DIAMANTE
-  { name: 'ROMAGNA', logo: '/KuraMembers/logo.png', tier: 'diamante' }, // No hay imagen disponible
+  { name: 'ALLORO', logo: '/Patrocinadores SR WF/Alloro Jungle Villas.png', tier: 'diamante' },
   { name: 'SOLVEK', logo: '/Patrocinadores SR WF/Logo Soltek_page-0001.jpg', tier: 'diamante' },
   { name: 'UNED', logo: '/Patrocinadores SR WF/UNED.png', tier: 'diamante' },
   
