@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import TeamSection from '@/components/TeamSection'
 import AboutSection from '@/components/AboutSection'
 import WhatWeDoSection from '@/components/WhatWeDoSection'
+import TheCarSection from '@/components/TheCarSection'
 import SponsorsSection from '@/components/SponsorsSection'
 import SupportSection from '@/components/SupportSection'
 import MeetOurMediaSection from '@/components/MeetOurMediaSection'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <TeamSection />
       <AboutSection />
       <WhatWeDoSection />
+      <TheCarSection />
       <SponsorsSection />
       <SupportSection />
       <MeetOurMediaSection />

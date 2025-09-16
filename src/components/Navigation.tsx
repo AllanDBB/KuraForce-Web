@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 interface NavigationProps {
   isDark?: boolean
@@ -21,6 +22,7 @@ export default function Navigation({ isDark = false }: NavigationProps) {
     { href: '#home', label: 'Home' },
     { href: '#team', label: 'Team' },
     { href: '#about', label: 'About' },
+    { href: '#the-car', label: 'The Car' },
     { href: '#sponsors', label: 'Sponsors' },
     { href: '#contact', label: 'Contact' },
   ]
@@ -48,15 +50,25 @@ export default function Navigation({ isDark = false }: NavigationProps) {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3"
           >
-            <div className={`text-2xl md:text-3xl font-black heading-primary transition-colors duration-300 ${
-              isScrolled ? 'text-green-racing' : 'text-white'
-            }`}>
-              KURA FORCE
+            <div className="relative w-12 h-12 md:w-14 md:h-14">
+              <Image
+                src="/logo.png"
+                alt="Kura Force Logo"
+                fill
+                className="object-contain"
+              />
             </div>
-            <div className={`hidden sm:block text-sm font-medium caption tracking-wide transition-colors duration-300 ${
-              isScrolled ? 'text-green-secondary' : 'text-white/80'
-            }`}>
-              STEM RACING
+            <div className="flex flex-col">
+              <div className={`text-xl md:text-2xl font-black heading-primary transition-colors duration-300 ${
+                isScrolled ? 'text-green-racing' : 'text-white'
+              }`}>
+                KURA FORCE
+              </div>
+              <div className={`hidden sm:block text-xs font-medium caption tracking-wide transition-colors duration-300 ${
+                isScrolled ? 'text-green-secondary' : 'text-white/80'
+              }`}>
+                STEM RACING
+              </div>
             </div>
           </motion.div>
 

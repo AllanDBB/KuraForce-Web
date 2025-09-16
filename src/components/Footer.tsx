@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -19,16 +20,28 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-center md:text-left"
           >
-            <motion.h3
-              whileHover={{ scale: 1.05 }}
-              className="heading-secondary text-3xl md:text-4xl text-green-racing mb-2"
-            >
-              KURA FORCE
-            </motion.h3>
-            <p className="text-lg text-green-secondary font-medium caption">
-              STEM RACING
-            </p>
-            <div className="mt-4 w-16 h-1 bg-green-gradient mx-auto md:mx-0 rounded-full" />
+            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/logo.png"
+                  alt="Kura Force Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <motion.h3
+                  whileHover={{ scale: 1.05 }}
+                  className="heading-secondary text-3xl md:text-4xl text-green-racing mb-2"
+                >
+                  KURA FORCE
+                </motion.h3>
+                <p className="text-lg text-green-secondary font-medium caption">
+                  STEM RACING
+                </p>
+                <div className="mt-4 w-16 h-1 bg-green-gradient mx-auto md:mx-0 rounded-full" />
+              </div>
+            </div>
           </motion.div>
 
           {/* Social Links */}

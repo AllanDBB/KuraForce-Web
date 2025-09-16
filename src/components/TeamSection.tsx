@@ -20,8 +20,8 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "David",
-    role: "Manufacturing Specialist",
-    description: "David brings excellence in 3D printing and fabrication, ensuring every component meets the highest quality standards for maximum performance.",
+    role: "Team Leader",
+    description: "David brings as a visionary leader, guiding our team with a focus on collaboration and innovation.",
     image: "/KuraMembers/David.jpg"
   },
   {

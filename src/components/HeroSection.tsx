@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Lottie from 'lottie-react'
 import animationData from '../../public/f1-lottie.json'
+import Image from 'next/image'
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -14,6 +15,31 @@ export default function HeroSection() {
   
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+
+  // Render animation state
+  const [currentRender, setCurrentRender] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const renderImages = [
+    '/render sin fondo/0.png',
+    '/render sin fondo/1.png',
+    '/render sin fondo/2.png',
+    '/render sin fondo/3.png',
+    '/render sin fondo/4.png'
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true)
+      
+      setTimeout(() => {
+        setCurrentRender((prev) => (prev >= renderImages.length - 1 ? 0 : prev + 1))
+        setIsTransitioning(false)
+      }, 600) // Longer fade out duration for smoother transition
+      
+    }, 4000) // Change every 4 seconds for slower animation
+
+    return () => clearInterval(interval)
+  }, [renderImages.length])
 
   return (
     <section
@@ -36,6 +62,44 @@ export default function HeroSection() {
             autoplay={true}
             className="w-full h-full object-cover"
           />
+        </div>
+      </motion.div>
+
+      {/* Animated F1 Car Render */}
+      <motion.div
+        style={{ y, opacity }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-full">
+            <motion.div
+              key={currentRender}
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ 
+                opacity: isTransitioning ? 0 : 0.35,
+                scale: 1
+              }}
+              transition={{ 
+                duration: 1.2,
+                ease: "easeInOut"
+              }}
+              className="absolute inset-0"
+            >
+              <div 
+                className="relative w-full h-full bg-transparent"
+              >
+                <Image
+                  src={renderImages[currentRender]}
+                  alt="Animated F1 Car Render"
+                  fill
+                  className="object-contain"
+                  style={{
+                    filter: 'contrast(1.1) brightness(1.0) saturate(1.1) drop-shadow(0 0 20px rgba(0,0,0,0.2))'
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 
@@ -68,7 +132,7 @@ export default function HeroSection() {
             className="space-y-2"
           >
             <h2 className="heading-secondary text-2xl sm:text-3xl md:text-4xl text-white/90">
-              STEM RACING
+              STEM Racing World Finals 2025 Costa Rica Team
             </h2>
             <motion.p
               initial={{ opacity: 0 }}
