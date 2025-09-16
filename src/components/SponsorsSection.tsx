@@ -42,7 +42,7 @@ const sponsors: Sponsor[] = [
 
 const tierConfig = {
   diamante: {
-    title: 'DIAMANTE',
+    title: 'DIAMOND',
     color: 'blue-500',
     bgColor: 'bg-blue-50',
     borderColor: 'border-blue-200',
@@ -50,7 +50,7 @@ const tierConfig = {
     size: 'large'
   },
   platino: {
-    title: 'PLATINO',
+    title: 'PLATINUM',
     color: 'gray-400',
     bgColor: 'bg-gray-50',
     borderColor: 'border-gray-200',
@@ -58,7 +58,7 @@ const tierConfig = {
     size: 'large'
   },
   oro: {
-    title: 'ORO',
+    title: 'GOLD',
     color: 'yellow-500',
     bgColor: 'bg-yellow-50',
     borderColor: 'border-yellow-200',
@@ -66,7 +66,7 @@ const tierConfig = {
     size: 'medium'
   },
   plata: {
-    title: 'PLATA',
+    title: 'SILVER',
     color: 'gray-300',
     bgColor: 'bg-gray-50',
     borderColor: 'border-gray-200',
@@ -74,7 +74,7 @@ const tierConfig = {
     size: 'medium'
   },
   bronce: {
-    title: 'BRONCE',
+    title: 'BRONZE',
     color: 'orange-600',
     bgColor: 'bg-orange-50',
     borderColor: 'border-orange-200',
@@ -82,7 +82,7 @@ const tierConfig = {
     size: 'small'
   },
   uncategory: {
-    title: 'SIN CATEGORÍA',
+    title: 'UNCATEGORIZED',
     color: 'green-racing',
     bgColor: 'bg-green-50',
     borderColor: 'border-green-200',
